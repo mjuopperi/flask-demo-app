@@ -7,5 +7,18 @@
 		<option value="{{ id }}">{{ name }}</option>
 		{% endfor %}
 	</select>
+	<h1>Elokuvat</h1>
+	<ul>
+		{% for id, movie in data['movies'].iteritems() %}
+		<li>
+			<div>
+				Nimi: {{ movie["title"] }}<br />
+				Genre(t): {{ movie["genres"] }}</br>
+				Ikäluokitus: <img src="{{ movie['rating'] }}" alt="Ikäluokitus" /><br />
+				Leffatykki arvostelu: <a href="{{ movie['review'] }}">{{ movie['review'] }}</a></br>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
 </div>
 {% endblock %}
