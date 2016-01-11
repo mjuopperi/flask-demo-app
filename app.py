@@ -24,14 +24,19 @@ def get_movies_with_reviews(area_code):
 
 @app.route('/')
 def index():
-	#return 'Hello World!'
 	areas = fk.get_area_codes()
-	movies = get_movies_with_reviews(1033)
 	data = {
-		'areas': areas,
-		'movies': movies
+		'areas': areas
 	}
 	return render_template('index.html', data=data)
 
+@app.route('/movies/<area>')
+def get_movies(area):
+	movies = get_movies_with_reviews(area)
+	data = {
+		'movies': movies
+	}
+	return render_template('_movies.html', data=data)
+
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)

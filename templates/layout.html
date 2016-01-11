@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.12.0.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
 <body>
 	<div id="contantent_container">{% block content %}{% endblock %}</div>
 	<div id="footer"> Example layout </div>
