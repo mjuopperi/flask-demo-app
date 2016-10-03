@@ -45,5 +45,3 @@ class FinnKinoXML(object):
     		    "genres": genres
     		}
     	return movies
-
-			
